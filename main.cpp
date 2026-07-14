@@ -3,8 +3,8 @@
 
 using namespace std;
 
-
-
 int main(){
+
+    mainLaberinto();
     return 0;
 }
