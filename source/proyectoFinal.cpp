@@ -1,4 +1,4 @@
-#include "../header/proyectoFinal.h"
+#include "proyectoFinal.h"
 #include <stdio.h>
 
 
@@ -39,7 +39,7 @@ bool resolverLaberinto(int arr[][7], int tamFila, int tamCol, int fila, int colu
 
  
 
-double reducir_rango(double x) 
+double reducirRango(double x) 
 {
     while (x > PI) 
 	{
@@ -52,13 +52,13 @@ double reducir_rango(double x)
     return x;
 }
 
-double mi_seno(double x) 
+double miSeno(double x) 
 {
-    x = reducir_rango(x);
+    x = reducirRango(x);
     double termino = x;
     double suma = termino;
     
-    for (int n = 1; n < ITERACIONES_TRIG; n++) 
+    for (int n = 1; n < REP_TRIG; n++) 
 	{
         termino = -termino * (x * x) / ((2 * n) * (2 * n + 1));
         suma += termino;
@@ -66,34 +66,34 @@ double mi_seno(double x)
     return suma;
 }
 
-double mi_coseno(double x)
+double miCoseno(double x)
 {
-    x = reducir_rango(x);
+    x = reducirRango(x);
     double termino = 1.0;
     double suma = termino;
     
-    for (int n = 1; n < ITERACIONES_TRIG; n++) {
+    for (int n = 1; n < REP_TRIG; n++) {
         termino = -termino * (x * x) / ((2 * n - 1) * (2 * n));
         suma += termino;
     }
     return suma;
 }
 
-double mi_tangente(double x) 
+double miTangente(double x) 
 {
-    double cos_x = mi_coseno(x);
+    double cos_x = miCoseno(x);
     if (cos_x > -0.000000001 && cos_x < 0.000000001) {
-        printf("Error: Tangente indefinida (divisiÛn por cero).\n");
+        printf("Error: Tangente indefinida\n");
         return 0.0; 
     }
-    return mi_seno(x) / cos_x;
+    return miSeno(x) / cos_x;
 }
 
-double mi_ln(double x) 
+double miLn(double x) 
 {
     if (x <= 0.0) 
 	{
-        printf("Error: El logaritmo solo est· definido para n˙meros positivos (> 0).\n");
+        printf("Error: El logaritmo solo est√° definido para n√∫meros positivos\n");
         return 0.0;
     }
     
@@ -102,7 +102,7 @@ double mi_ln(double x)
     double termino = y;
     double suma = termino;
     
-    for (int n = 1; n < ITERACIONES_LOG; n++) 
+    for (int n = 1; n < REP_LOG; n++) 
 	{
         termino *= y2;
         suma += termino / (2 * n + 1);
@@ -110,7 +110,3 @@ double mi_ln(double x)
     
     return 2.0 * suma;
 }
-
-
-
-
