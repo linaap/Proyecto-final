@@ -3,9 +3,6 @@
 #define PROYECTOFINAL_H
 #include <string>
 
-#ifndef NEURONA_h
-#define Neurona_h
-
 struct Neurona{
 
 	double w0;
