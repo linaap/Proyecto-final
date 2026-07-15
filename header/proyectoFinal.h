@@ -3,7 +3,18 @@
 #define PROYECTOFINAL_H
 #include <string>
 
+#define PI 3.14159265358979323846
+#define REP_TRIG 20  
+#define REP_LOG 50
+
 int resolverLaberinto(int arr[][7], int tamFila, int tamCol, int fila, int columna, int &contador);
 void mainLaberinto();
+
+double reducirRango(double x);
+double miSeno(double x);
+double miCoseno(double x);
+double miLn(double x);
+double miTangente(double x);
+
 
 #endif
