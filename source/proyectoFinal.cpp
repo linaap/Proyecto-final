@@ -1,6 +1,36 @@
 #include "proyectoFinal.h"
 #include <stdio.h>
 
+using namespace std;
+
+//Ejercicio 1
+void entrenarNeurona (Neurona &n, double x[], double y[], int N, double TA, int epocas){
+	for (int epoca = 1; epoca <= epocas; epoca++){
+		double errorTotal = 0;
+		double gradw0 = 0;
+		double gradb = 0;
+		
+		for (int i = 0; i < N; i++){
+			double a = n.w0 * x[i] + n.b;
+			double error = a - y[i];
+			
+			errorTotal += pow(error,2);
+			
+			gradw0 += error * x[i];
+			gradb += error;
+		}
+		
+		gradw0 = (2.0 / N) * gradw0;
+		gradb = (2.0 / N) *gradb;
+		
+		n.w0 = n.w0 - TA * gradw0;
+		n.b = n.b - TA * gradb;
+	}
+}
+
+double predecir(const Neurona &n, double x){
+	return n.w0 * x + n.b;
+}
 
 
 //funciones ejercicio laberinto
