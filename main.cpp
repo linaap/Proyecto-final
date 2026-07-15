@@ -6,5 +6,8 @@ using namespace std;
 int main(){
 
     mainLaberinto();
+
+    
+    // pruebaCaluladora();
     return 0;
 }
