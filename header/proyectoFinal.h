@@ -3,6 +3,19 @@
 #define PROYECTOFINAL_H
 #include <string>
 
+#ifndef NEURONA_h
+#define Neurona_h
+
+struct Neurona{
+
+	double w0;
+	double b;
+};
+
+void entrenarNeurona(Neurona &n, double x[], double y[], int N, double TA, int epocas);
+double predecir(const Neurona &n, double x);
+
+
 #define PI 3.14159265358979323846
 #define REP_TRIG 20  
 #define REP_LOG 50
