@@ -10,6 +10,7 @@
 int resolverLaberinto(int arr[][7], int tamFila, int tamCol, int fila, int columna, int &contador);
 void mainLaberinto();
 
+void pruebaCaluladora();
 double reducirRango(double x);
 double miSeno(double x);
 double miCoseno(double x);
